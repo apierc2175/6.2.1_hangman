@@ -4,12 +4,14 @@
 #the letters you got right must stay on screen
 import random
 
-words = ["program", "coding", "carolina", "circus", "popcorn"]
+words = ["program", "coding", "carolina", "circus", "popcorn", "test", "word", "person", "place", "thing", "computer", "laptop"]
 print("play hangman the answer will be one of the following words! " + str(words))
 rand_num = random.randint(1,len(words) - 1)
 rand_word = words[rand_num]
 rand_word_length = len(rand_word)
 guesses_left = 5
+wrong_letter_guess = []
+wrong_letter_guess_show = wrong_letter_guess.append("test")
 print(rand_word)
 print("the word is " + str(rand_word_length) + " letters long")
 
@@ -26,6 +28,8 @@ for letter in rand_word:
         if(guesses_left == 0):
             print("You are out of guesses you lose!")
             break
+        #wrong_letter_guess = wrong_letter_guess.append(letter_guess)
+        #print("You have guessed the following: " + str(wrong_letter_guess)
         letter_guess = input("Try again! Guess a letter inbetween quotes or the whole word: ")
         print("You have " + str(guesses_left) + " guesses left")
     elif(letter_guess == letter):
@@ -34,5 +38,7 @@ for letter in rand_word:
         if(guesses_left == 0):
             print("You are out of guesses you lose!")
             break
+        #wrong_letter_guess = wrong_letter_guess.append(letter_guess)
+        #print("You have guessed the following: " + str(wrong_letter_guess))
         letter_guess = input("Good job! Guess a letter inbetween quotes or the whole word: ")
         print("You have " + str(guesses_left) + " guesses left")
